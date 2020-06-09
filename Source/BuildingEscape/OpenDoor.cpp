@@ -31,7 +31,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	CurrentYaw = FMath::Lerp(CurrentYaw, TargetYaw, OpenSpeed * DeltaTime);
+	CurrentYaw = FMath::Lerp(CurrentYaw, TargetYaw, 1.f * DeltaTime);
 	FRotator DoorRotation = GetOwner()->GetActorRotation();
 	DoorRotation.Yaw = CurrentYaw;
 	GetOwner()->SetActorRotation(DoorRotation);
